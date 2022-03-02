@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # ajouter ces 3 lignes
+  ####################
+  host: db
+  username: postgres
+  password: password
+  ####################
+  pool: 5
+
+development:
+  <<: *default
+  database: new_app_development
+
+
+test:
+  <<: *default
+  database: new_app_test
+
